@@ -74,13 +74,20 @@ public class HomeActivity extends AppActivity implements HomeAdapter.Listener{
 
         loadingView.setErrorRes(R.string.no_internet_connection_message);
         loadingView.setLoadingRes(R.string.loading);
-        loadingView.setOnRetryListener(() -> mModel.reload());
+        loadingView.setOnRetryListener(() -> {
+            if(user == null) {
+                mModel.getUserInfo();
+            }
+            mModel.reload();
+        });
     }
 
 
     private void subscribeToModel() {
         // Get the ViewModel.
         mModel = ViewModelProviders.of(this).get(HomeViewModel.class);
+
+        // Create the observer which updates the UI.
         mModel.getCurrentUser().observe(this, user -> {
             this.user = user;
             adapter.setProfile(user);
@@ -146,6 +153,7 @@ public class HomeActivity extends AppActivity implements HomeAdapter.Listener{
     @Override
     @OnClick(R.id.create_post)
     public void onCreateTweets() {
+        if(user == null) return;
         Intent intent = new Intent(this, CreatePostActivity.class);
         App.getInstance().getBus().pushSticky(user);
         startActivityForResult(intent, REQUEST_INSERT);

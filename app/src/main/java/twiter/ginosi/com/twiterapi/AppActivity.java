@@ -47,7 +47,6 @@ public class AppActivity extends AppCompatActivity implements NetworkReceiverLis
         this.registerReceiver(networkReceiver, new IntentFilter(CONNECTIVITY_CHANGE_ACTION));
     }
 
-
     public boolean promptExternalStoragePermissions(PermissionRequestCallback callback) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {

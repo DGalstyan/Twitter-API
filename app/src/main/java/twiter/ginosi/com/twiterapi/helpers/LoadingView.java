@@ -47,13 +47,6 @@ public class LoadingView extends LinearLayout {
         init();
     }
 
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public LoadingView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
-        super(context, attrs, defStyleAttr, defStyleRes);
-        init();
-    }
-
-
     private void init(){
         rootView = inflate(getContext(), R.layout.view_loading, this);
 
@@ -72,10 +65,6 @@ public class LoadingView extends LinearLayout {
 
     public void setOnRetryListener(Runnable listener){
         onRetryListener = listener;
-    }
-
-    public int getMode() {
-        return mode;
     }
 
     public void setMode(int mode){
@@ -128,12 +117,6 @@ public class LoadingView extends LinearLayout {
         errorStringId = id;
         if(mode == ERROR && errorStringId != -1){
             textView.setText(errorStringId);
-        }
-    }
-
-    public void setButtonRes(@StringRes int id) {
-        if(id != -1){
-            button.setText(id);
         }
     }
 }

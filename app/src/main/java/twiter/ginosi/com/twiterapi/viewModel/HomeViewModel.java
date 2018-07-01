@@ -57,7 +57,7 @@ public class HomeViewModel extends ViewModel  {
         return mTwits;
     }
 
-    private void getUserInfo(){
+    public void getUserInfo(){
         Call<User> call = App.getInstance().getNetworkHttpClient().getCustomService().show(App.getInstance().getNetworkHttpClient().getUserId());
         call.enqueue(new retrofit2.Callback<User>() {
             @Override

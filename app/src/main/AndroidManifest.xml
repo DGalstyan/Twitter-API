@@ -22,11 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".HomeActivity" />
+        <activity android:name=".HomeActivity" android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name=".CreatePostActivity"
             android:label="@string/create_tweet"
-            android:parentActivityName=".HomeActivity">
+            android:parentActivityName=".HomeActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize">
 
             <!-- The meta-data element is needed for versions lower than 4.1 -->
             <meta-data
