@@ -15,7 +15,7 @@ Features
 ==========
 1. Used MVVM architecture
 2. Used popular third party libraries, such as: Gson, Palette, Retrofit, Fresco and Butterknife
-3. Used mockito test methods to test applicarion
+3. Used mockito test methods to test application
 4. Used Repository Design Pattern
 
 # Make this code shine!
