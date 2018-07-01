@@ -18,9 +18,6 @@ Features
 3. Used mockito test methods to test applicarion
 4. Used Repository Design Pattern
 
-# Plugins used
-[Android Drawable Importar](http://androidgifts.com/material-design-icons-android-studio-drawable-importer/)
-
 # Software Architectural Pattern used
 [MVVM (Model–View–ViewModel)](https://en.wikipedia.org/wiki/Model–view–viewmodel)
 
@@ -32,11 +29,11 @@ Features
 
 User can press on Login in button to Log in the application via your Twitter Account. If Twitter Application exists in your mobile phone, so it will be redirected to the Twitter Application to get Authontecation Permission otherwise A Webpage will be opened.
 
-3. **Tweets Screen :**
+2. **Tweets Screen :**
 
 Tweets will appear realted to the logged user. Pull to Refresh and Infinite Scrolling are applied.
 
-4. **Create Tweets :**
+3. **Create Tweets :**
 
 Press add button and create new tweet
 
