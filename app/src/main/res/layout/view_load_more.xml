@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ProgressBar
+        android:id="@+id/load_circle"
+        style="@style/Widget.AppCompat.ProgressBar"
+        android:layout_width="36dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:indeterminateTintMode="src_in" />
+    <TextView
+        android:id="@+id/load_text"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="center"
+        android:text="@string/no_internet_connection_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/load_button"
+        android:layout_gravity="center"
+        android:textColor="?attr/textColorPrimaryColoredDark"
+        style="?attr/borderlessButtonStyle"
+        android:text="@string/list_load_more"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

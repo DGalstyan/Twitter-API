@@ -1,0 +1,10 @@
+<resources>
+    <dimen name="card_padding_fix_1dp">-4dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="item_avatar">50dp</dimen>
+
+    <dimen name="image_max_height">300dp</dimen>
+    <dimen name="image_max_width">520dp</dimen>
+
+    <dimen name="sp_14sp">14.0sp</dimen>
+</resources>

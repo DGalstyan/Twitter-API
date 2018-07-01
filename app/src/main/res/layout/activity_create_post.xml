@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreatePostActivity"
+    android:id="@+id/root_view"
+    >
+
+    <RelativeLayout
+        android:id="@+id/toolbar_sub_error_bar"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:background="@color/network"
+        android:clickable="false"
+        android:visibility="gone"
+        >
+
+        <TextView
+            android:id="@+id/toolbarErrorText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:gravity="center_horizontal"
+            android:text="@string/waiting_for_network"
+            android:textColor="@color/card_background"
+            android:textSize="@dimen/sp_14sp"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_below="@+id/toolbar_sub_error_bar"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="16dp"
+        android:orientation="horizontal">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/write_page_avatar"
+            android:layout_width="@dimen/item_avatar"
+            android:layout_height="@dimen/item_avatar"
+            android:contentDescription="@null"
+            app:roundAsCircle="true" />
+
+        <TextView
+            android:id="@+id/write_page_user_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/write_page_avatar"
+            android:layout_toRightOf="@+id/write_page_avatar"
+            android:layout_gravity="center"
+            android:layout_marginLeft="16dp"
+            android:layout_marginStart="16dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="18sp"
+            tools:text="James Flanders" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scroll_view"
+        android:layout_above="@+id/keyboard_layout"
+        android:layout_below="@+id/main_content"
+        android:fillViewport="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            android:orientation="vertical"
+            >
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <View
+                    android:id="@+id/mention_popup_anchor"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    />
+                <EditText
+                    android:id="@+id/post_text"
+                    android:maxLength="256"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:background="@android:color/transparent"
+                    android:dropDownAnchor="@id/mention_popup_anchor"
+                    android:gravity="top|left"
+                    android:hint="@string/post_form_hint"
+                    android:imeOptions="actionDone"
+                    android:inputType="textMultiLine"
+                    android:paddingBottom="16dp"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:textSize="22sp"
+                    />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/image_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <twiter.ginosi.com.twiterapi.helpers.PostImageView
+                    android:id="@+id/upload_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"/>
+
+                <LinearLayout
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignTop="@id/upload_image"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/info_background"
+                    android:gravity="center"
+                    android:id="@+id/close_layout">
+                    <ImageButton
+                        android:id="@+id/btn_close"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@drawable/ic_clear_white_24dp"
+                        android:scaleType="fitCenter"
+                        />
+                </LinearLayout>
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/char_counter"
+        android:layout_above="@+id/scroll_view"
+        android:gravity="end"
+        android:textSize="12sp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="4dp"
+        tools:text="0/256"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+
+    <LinearLayout
+        android:id="@+id/keyboard_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:orientation="vertical"
+        >
+        <View
+            android:id="@+id/divider"
+            android:background="?attr/dividerColor"
+            android:layout_width="match_parent"
+            android:layout_height="0.75dp"/>
+
+        <FrameLayout
+            android:id="@+id/keyboard_view"
+            android:background="@color/app_background_color"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <Button
+                android:id="@+id/write_page_post_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/action_tweet"
+                style="?attr/borderlessButtonStyle"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_gravity="end" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="start|center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/add_image"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_insert_photo_black_24dp" />
+
+                <ImageButton
+                    android:id="@+id/camera_photo"
+                    style="?attr/borderlessButtonStyle"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_camera_alt_black_24dp" />
+
+            </LinearLayout>
+        </FrameLayout>
+        <View
+            android:background="?attr/dividerColor"
+            android:layout_width="match_parent"
+            android:layout_height="0.75dp"/>
+    </LinearLayout>
+</RelativeLayout>

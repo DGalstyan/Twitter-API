@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#4ABD9C</color>
+
+    <!-- Material colors -->
+    <color name="app_primary_color_200">#5070a9</color>
+    <color name="card_background">#fafafa</color>
+    <color name="white">#ffffff</color>
+    <color name="white_divider">#1effffff</color>
+    <color name="info_background">#eee</color>
+    <color name="app_background_color">#eeeeee</color>
+    <color name="gray">#e0e0e0</color>
+    <color name="network">#ffb400</color>
+    <color name="green">#4ABD9C</color>
+</resources>

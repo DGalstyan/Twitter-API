@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/feed_item"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardPreventCornerOverlap="false"
+    app:cardElevation="1dp"
+    android:layout_marginTop="6dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginBottom="@dimen/card_padding_fix_1dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true">
+
+    <RelativeLayout
+        android:id="@+id/item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/user_avatar"
+            app:actualImageScaleType="centerCrop"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/profile_name"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            tools:text="James Flanders posted a code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/user_avatar"
+            android:layout_toRightOf="@id/user_avatar"
+            />
+
+        <TextView
+            android:id="@+id/post_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="8dp"
+            android:layout_centerHorizontal="true"
+            tools:text="He learned hard and got what he deserves"
+            android:layout_toRightOf="@+id/user_avatar"
+            android:layout_toEndOf="@+id/user_avatar"
+            android:layout_below="@+id/profile_name"/>
+
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:id="@+id/twit_image"
+            android:layout_width="match_parent"
+            app:actualImageScaleType="fitCenter"
+            app:viewAspectRatio="2"
+            android:layout_below="@+id/post_text"
+            android:layout_height="wrap_content"
+            />
+
+
+        <TextView
+            android:id="@+id/twit_date"
+            android:textColor="?android:attr/textColorSecondary"
+            tools:text="Just Now"
+            android:layout_below="@+id/twit_image"
+            android:gravity="left"
+            android:textSize="10sp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
