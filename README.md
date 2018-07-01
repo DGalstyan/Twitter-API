@@ -13,7 +13,7 @@ Display the history of posted tweets
 
 Features
 ==========
-1. Used MVP architecture
+1. Used MVVM architecture
 2. Used popular third party libraries, such as: Gson, Palette, Retrofit, Fresco and Butterknife
 3. Used mockito test methods to test applicarion
 4. Used Repository Design Pattern
@@ -24,9 +24,34 @@ Features
 # Software Architectural Pattern used
 [MVVM (Model–View–ViewModel)](https://en.wikipedia.org/wiki/Model–view–viewmodel)
 
-# Technical Documentation
-==========
 -----------------------------------------------------------------------------------------------------
+
+# User Documentation :
+
+1. **Login Screen :**
+
+User can press on Login in button to Log in the application via your Twitter Account. If Twitter Application exists in your mobile phone, so it will be redirected to the Twitter Application to get Authontecation Permission otherwise A Webpage will be opened.
+
+3. **Tweets Screen :**
+
+Tweets will appear realted to the logged user. Pull to Refresh and Infinite Scrolling are applied.
+
+4. **Create Tweets :**
+
+Press add button and create new tweet
+
+-----------------------------------------------------------------------------------------------------
+
+# Technical Documentation
+-----------------------------------------------------------------------------------------------------
+**Fresco :**
+
+Images add much-needed context and visual flair to Android applications. Fresco allows for hassle-free image loading in your application—often in one line of code!
+
+Many common pitfalls of image loading on Android are handled automatically by Fresco:
+- Handling ImageView recycling and download cancelation in an adapter.
+- Complex image transformations with minimal memory use.
+- Automatic memory and disk caching.
 
 # MVVM Software Architecture Pattern :
 
@@ -55,6 +80,18 @@ This approach (MVVM) is made up of three core components, each with it’s own d
 
 -----------------------------------------------------------------------------------------------------
 
+# MVVM Example implemented on This Application
+
+**- HomeActivity VIEW :**
+Defines the structure, layout and appearance of a view on HomeActivity screen. Data binding configuration takes place here since you make a data binding between ViewModel and its XML Layout.
+
+**- HomeViewModel VIEWMODEL :**
+Acts a link between the HomeActivity "View" and Tweet "Model", send notification to HomeActivity "View" and FollowersActivity "View" make a data minding commands to HomeViewModel.
+
+**- Tweet MODEL :**
+Data model containing business and validation logic.
+
+-----------------------------------------------------------------------------------------------------
 
 Android versions
 ==========
